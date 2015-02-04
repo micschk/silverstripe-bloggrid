@@ -1,8 +1,16 @@
 ---
 Only:
+  classexists: FeaturedImageExtension
+---
+BlogGridPage:
+  extensions:
+    - 'FeaturedImageExtension'
+
+---
+Only:
   classexists: EmbargoExpirySchedulerExtension
 ---
-NewsGridPage:
+BlogGridPage:
   extensions:
     - EmbargoExpirySchedulerExtension
 
@@ -10,16 +18,16 @@ NewsGridPage:
 Only:
   classexists: FilterableArchiveHolderExtension
 ---
-NewsGridHolder:
+BlogGridHolder:
   extensions:
-    - 'FilterableArchiveHolderExtension'
-  pagination_control_tab: "Root.Subpages"
-  pagination_insert_before: "Subpages"
-  managed_object_class: "NewsGridPage"
-  managed_object_date_field: "Date"
-NewsGridHolder_Controller:
+    - FilterableArchiveHolderExtension
+  pagination_control_tab: Root.Subpages
+  pagination_insert_before: SubPages
+  managed_object_class: BlogGridPage
+  managed_object_date_field: Date
+BlogGridHolder_Controller:
   extensions:
-    - 'FilterableArchiveHolder_ControllerExtension'
-NewsGridPage_Controller:
+    - FilterableArchiveHolder_ControllerExtension
+BlogGridPage:
   extensions:
-    - 'FilterableArchiveItemExtension'
+    - FilterableArchiveItemExtension

@@ -1,18 +1,18 @@
 <?php
  
-class NewsGridHolder extends GridFieldPageHolder {
+class BlogGridHolder extends GridFieldPageHolder {
 
-	public static $icon = 'newsgrid/images/newsholder.png';
+	public static $icon = 'bloggrid/images/blogholder.png';
 
-    static $db = array(
-		'ItemsPerPage' => 'Int',
-    );
+//    static $db = array(
+//		'ItemsPerPage' => 'Int',
+//    );
 	
-    static $has_one = array(
-    );
+//    static $has_one = array(
+//    );
 
-    static $allowed_children = array('*NewsGridPage');
-	static $default_child = "NewsGridPage";
+    static $allowed_children = array('*BlogGridPage');
+	static $default_child = "BlogGridPage";
 	static $add_default_gridfield = false; // set to false so GridFieldPage doesn't add standard gridfield
      
 	public function getCMSFields() {
@@ -40,7 +40,7 @@ class NewsGridHolder extends GridFieldPageHolder {
 		$pages = $this->AllChildrenIncludingDeleted();
 
 		// use gridfield as normal;
-		$gridField = new GridField("Subpages", "Manage Newsitems", 
+		$gridField = new GridField("Subpages", "Manage Blogposts", 
 			$pages, $gridFieldConfig);
 
 		$gridField->setModelClass(self::$default_child);
@@ -51,32 +51,32 @@ class NewsGridHolder extends GridFieldPageHolder {
 		return $fields;
 	}
 	
-	public function SortedChildren(){ 
-		// $children will be a DataObjectSet 
-		$children = $this->Children();
-
-		if( !$children ) 
-		return null; // no children, nothing to work with
-
-		// optionally: sort on some other field, like Date (override from subclass)
-		$children->sort('Date', 'DESC');
-		
-		// M: gridnews
-		if($this->ItemsPerPage && $this->ItemsPerPage > 0) {
-			$ctrlr = Controller::curr();
-			$children = new PaginatedList($children, $ctrlr->request);
-			$children->setPageLength($this->ItemsPerPage);
-		}
-		// M: END gridnews
-
-		// return sorted set 
-		return $children; 
-	}
+//	public function SortedChildren(){ 
+//		// $children will be a DataObjectSet 
+//		$children = $this->Children();
+//
+//		if( !$children ) 
+//		return null; // no children, nothing to work with
+//
+//		// optionally: sort on some other field, like Date (override from subclass)
+//		$children->sort('Date', 'DESC');
+//		
+//		// M: gridnews
+////		if($this->ItemsPerPage && $this->ItemsPerPage > 0) {
+////			$ctrlr = Controller::curr();
+////			$children = new PaginatedList($children, $ctrlr->request);
+////			$children->setPageLength($this->ItemsPerPage);
+////		}
+//		// M: END gridnews
+//
+//		// return sorted set 
+//		return $children; 
+//	}
 	
 	
 }
  
-class NewsGridHolder_Controller extends GridFieldPageHolder_Controller {
+class BlogGridHolder_Controller extends GridFieldPageHolder_Controller {
 	
 	// redirect this page to its first child page (better to implement on link() in Model)
 //	public function index(){

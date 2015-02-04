@@ -1,11 +1,11 @@
 <?php
-class NewsGridPage extends GridFieldPage {
+class BlogGridPage extends GridFieldPage {
 	
 	public static $db = array(
 		'Date' => 'Date',
 	);
 	
-	public static $icon = 'newsgrid/images/newsholder.png';
+	public static $icon = 'bloggrid/images/blogitem.png';
 	
 	public function formattedPublishDate(){
 		return $this->obj('Date')->Format('Y-m-d'); 
@@ -29,5 +29,5 @@ class NewsGridPage extends GridFieldPage {
 	
 }
  
-class NewsGridPage_Controller extends GridFieldPage_Controller {
+class BlogGridPage_Controller extends GridFieldPage_Controller {
 }

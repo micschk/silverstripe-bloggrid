@@ -1,8 +1,8 @@
 {
-    "name": "micschk/silverstripe-newsgrid",
-    "description": "Manage News items from a Gridfield to prevent cluttering the sitetree",
+    "name": "micschk/silverstripe-bloggrid",
+    "description": "Manage Blog items from a Gridfield to prevent cluttering the sitetree",
     "type": "silverstripe-module",
-    "keywords": ["silverstripe", "excludechildren", "sitetree", "gridfield", "news", "updates"],
+    "keywords": ["silverstripe", "excludechildren", "sitetree", "gridfield", "blog", "updates"],
     "authors": [
     {
         "name": "micschk"
@@ -10,10 +10,11 @@
     "require": {
         "micschk/silverstripe-gridfieldpages": "*",
 		"micschk/silverstripe-softscheduler": "*",
-		"micschk/silverstripe-filterablearchive": "*"
+		"micschk/silverstripe-filterablearchive": "*",
+		"micschk/silverstripe-featuredimages": "*"
     },
 	"extra": {
-		"installer-name": "newsgrid"
+		"installer-name": "bloggrid"
 	}
     
 }

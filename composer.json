@@ -10,7 +10,8 @@
     "require": {
         "micschk/silverstripe-gridfieldpages": "*",
 		"micschk/silverstripe-softscheduler": "*",
-		"micschk/silverstripe-filterablearchive": "*"
+		"micschk/silverstripe-filterablearchive": "*",
+		"micschk/silverstripe-featuredimages": "*"
     },
 	"extra": {
 		"installer-name": "newsgrid"

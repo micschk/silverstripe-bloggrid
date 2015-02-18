@@ -46,7 +46,7 @@ class BlogGridHolder extends GridFieldPageHolder {
 		$gridField->setModelClass(self::$default_child);
 		//$gridField->setModelClass("GridFieldPage"); // prevents "GridField doesn't have a modelClassName" error
 
-		$fields->addFieldToTab("Root.Subpages", $gridField);
+		$fields->addFieldToTab("Root.BlogPosts", $gridField);
 		
 		return $fields;
 	}

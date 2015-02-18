@@ -1,4 +1,5 @@
 ---
+name: bloggrid-image
 Only:
   classexists: FeaturedImageExtension
 ---
@@ -21,7 +22,7 @@ Only:
 BlogGridHolder:
   extensions:
     - FilterableArchiveHolderExtension
-  pagination_control_tab: Root.Subpages
+  pagination_control_tab: Root.Filters
   pagination_insert_before: SubPages
   managed_object_class: BlogGridPage
   managed_object_date_field: Date
